@@ -1,26 +1,31 @@
 #include <stdio.h>
 
-int ft_iterative_factorial(int nb)
+int		ft_iterative_factorial(int nb)
 {
 	int i;
+	int result;
+	int add;
 
+	i = 0;
+	result = 0;
 	if (nb < 1)
 		return (0);
-	i = nb;
-	while (i > 1)
+	while (i <= nb)
 	{
-		nb = nb * (i - 1);
-		i--;
+		add = nb * (i + 1);
+		result = result + add;
+		i++;
 	}
-	return (nb);
+	return(result); 
 }
 
 int		main()
 {
 	int nb;
 
-	nb = 8;
-	ft_iterative_factorial(nb);
-	printf("opération = %d\n", nb);
+	nb = 9;
+	printf("opération = %d\n", ft_iterative_factorial(nb));
 	return(0);
 }
+
+// result = 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1 
