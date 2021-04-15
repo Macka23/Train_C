@@ -1,38 +1,43 @@
 #include <stdio.h>
 
-int		ft_find_next_prime(int nb)
+int		ft_is_prime(int nb)
 {
 	int i;
-	int j;
-	int add_nb;
-
-	add_nb = nb++;
-	j = 2;
+	
 	i = 2;
-	while(add_nb % j != 0)
+	if (nb <= 1)
+		return(0);
+	if (nb == 2)
+		return(nb);
+	while (i < nb)
 	{
-		add_nb++;
-		if (add_nb == 0 || add_nb == 1)
+		if (nb % i == 0)
 			return(0);
-		if (add_nb == 2)
-			return(1);
-		while (add_nb % i != 0)
-		{
-			if (add_nb % i == 0 && i != add_nb)
-				return(0);
-			else
-				return(1);
-			i++;
-		}
+		i++;
 	}
-	return(0);
+	return(nb);
 }
+
+int		ft_find_next_prime(int nb)
+{
+	int newnb;
+
+	newnb = nb;
+	if (ft_is_prime(newnb) != 0)
+		newnb++;
+	while (ft_is_prime(newnb) == 0)
+		newnb++;
+	return(newnb);
+
+	
+}
+
 
 int		main(void)
 {
 	int nb;
 
-	nb = ;
+	nb = 41;
 	printf("%d\n", ft_find_next_prime(nb));
 	return(0);
 }
