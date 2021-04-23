@@ -5,7 +5,7 @@ char    *ft_strncpy(char *dest, char *src, unsigned int n)
     unsigned int i;
 
     i = 0;
-    while (i <= n)
+    while (i < n)
     {
         dest[i] = src[i];
         i++;
@@ -17,12 +17,10 @@ char    *ft_strncpy(char *dest, char *src, unsigned int n)
 int     main(void)
 {
     unsigned int n;
-    char *dest;
-    char *src;
+    char dest[3] = "Non";
+    char src[3] = "Oui";
 
-    n = 5;
-    src = "Oui";
-    dest = "Non";
+    n = 2;
     ft_strncpy(dest, src, n);
     printf("ft_strncpy = %s\n", dest);
     return(0);
