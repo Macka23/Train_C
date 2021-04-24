@@ -1,25 +1,28 @@
 #include <stdio.h>
 
-char 	*ft_strcpy(char *dest, const char *src)
+char 	*ft_strcpy(char *dest, char *src)
 {
-	int i = 0;
+	int i;
 
-	while (src[i] != '\0')
+	printf("oui");
+	i = 0;
+	while (src[i] < '\0')
 	{
 		dest[i] = src[i];
-		++i;
+		i++;
 	}
 	dest[i] = '\0';
-	return (dest);
+	return(dest, src);
 
 }
 
 int		main(void)
 {
-	char ligne[3] = "Oui";
-	char dest[3] = "Non";
-	char *result = ft_strcpy(dest, ligne);
+	char *ligne;
+	char *dest;
 
-	printf("ft_strcpy = %s\n", result);
+	ligne = "Oui";
+	dest = "0";
+	printf("ft_strcpy = %d\n", ft_strcpy(dest, ligne));
 	return(0);
 }

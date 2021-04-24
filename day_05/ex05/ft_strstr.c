@@ -24,8 +24,8 @@ char    *ft_strstr(char *str, char *to_find)
 
 int     main(void)
 {
-    char str[12] = "854ouilok";
-    char to_find[12] = "oui";
+    char str[] = "854ouilok";
+    char to_find[] = "oui";
 
     printf("%s est trouve dans str.", ft_strstr(str, to_find));
     return(0);

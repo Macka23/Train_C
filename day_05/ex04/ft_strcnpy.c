@@ -17,8 +17,8 @@ char    *ft_strncpy(char *dest, char *src, unsigned int n)
 int     main(void)
 {
     unsigned int n;
-    char dest[3] = "Non";
-    char src[3] = "Oui";
+    char dest[] = "Non";
+    char src[] = "Oui";
 
     n = 2;
     ft_strncpy(dest, src, n);
