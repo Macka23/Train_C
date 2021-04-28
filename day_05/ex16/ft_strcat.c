@@ -7,32 +7,23 @@ char	*ft_strcat(char *dest, char *src)
 
 	i = 0;
 	j = 0;
-	while (src[i] != '\0')
-	{
-		++i;
-	}
-	if (src[i] == '\0')
-	{
-		src[i] = dest[j];
+	while (dest[i] != '\0')
 		i++;
+
+	while (src[j] != '\0')
+	{
+		dest[i + j] = src[j];
 		j++;
 	}
-	while (dest[j] != '\0')
-	{
-		src[i] = dest[j];
-		i++;
-		j++;
-	}
+	dest[i + j] = '\0';
 	return(dest);
 }
 
 int		main(void)
 {
-	char *src;
-	char *dest;
+	char src[] = "src";
+	char dest[] = "dest";
 
-	src = "src\0";
-	dest = "dest\0";
 	printf("ft_strcat = %s\n", ft_strcat(dest, src));
 	return(0);
 }
