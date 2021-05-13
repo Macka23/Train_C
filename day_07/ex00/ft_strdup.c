@@ -17,6 +17,8 @@ char	*ft_strdup(char *src)
 		str[i] = src[i];
 		i++;
 	}
+	str[i] = '\0';
+	free(str);
 	return(str);
 }
 
@@ -26,6 +28,5 @@ int		main(void)
 
 	src = "Je suis moche";
 	printf("ft_strdup = %s\n", ft_strdup(src));
-	free(str);
 	return(0);
 }
