@@ -18,15 +18,17 @@ char	*ft_strdup(char *src)
 		i++;
 	}
 	str[i] = '\0';
-	free(str);
 	return(str);
 }
 
 int		main(void)
 {
 	char *src;
+	char *stack;
 
 	src = "Je suis moche";
-	printf("ft_strdup = %s\n", ft_strdup(src));
+	stack = ft_strdup(src);
+	printf("ft_strdup = %s\n", stack);
+	free(stack);
 	return(0);
 }
